@@ -28,25 +28,27 @@ public class GraficaCURP extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
+        txtName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtA1 = new javax.swing.JTextField();
-        txtA2 = new javax.swing.JTextField();
+        txtLastname1 = new javax.swing.JTextField();
+        txtLastname2 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        EstadoN = new javax.swing.JComboBox<>();
+        cmbState = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        Sexo = new javax.swing.JComboBox<>();
-        intA = new javax.swing.JTextField();
+        cmbGender = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        intD = new javax.swing.JTextField();
-        intM = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         CURP = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        btnPrueva = new javax.swing.JButton();
+        txtCurp = new javax.swing.JTextField();
+        cmbYear = new javax.swing.JComboBox<>();
+        cmbMonth = new javax.swing.JComboBox<>();
+        cmbDay = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -59,10 +61,9 @@ public class GraficaCURP extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setText("Generación de CURP");
 
-        txtNombre.setText("jTextField1");
-        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+        txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreActionPerformed(evt);
+                txtNameActionPerformed(evt);
             }
         });
 
@@ -73,44 +74,24 @@ public class GraficaCURP extends javax.swing.JFrame {
 
         jLabel5.setText("Apellido 1");
 
-        txtA1.setText("jTextField1");
-
-        txtA2.setText("jTextField1");
-
         jLabel6.setText("Apellido 2");
 
-        EstadoN.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas", "Chihuahua", "Ciudad de México", "Coahuila", "Colima", "Durango", "Estado de México", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacán", "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro", "Quintana Roo", "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas" }));
+        cmbState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas", "Chihuahua", "Ciudad de México", "Coahuila", "Colima", "Durango", "México", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacán", "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro", "Quintana Roo", "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas" }));
+        cmbState.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbStateActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Ingrese su fecha de nacimiento:");
 
         jLabel8.setText("Seleccione su sexo:");
 
-        Sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Mujer", "Hombre" }));
-
-        intA.setText("jTextField1");
-        intA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                intAActionPerformed(evt);
-            }
-        });
+        cmbGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Mujer", "Hombre" }));
 
         jLabel9.setText("Seleccione su estado de nacimiento:");
 
         jLabel10.setText("YYYY         /         MM          /          DD  ");
-
-        intD.setText("jTextField1");
-        intD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                intDActionPerformed(evt);
-            }
-        });
-
-        intM.setText("jTextField1");
-        intM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                intMActionPerformed(evt);
-            }
-        });
 
         jLabel11.setText("Su CURP: ");
 
@@ -119,6 +100,29 @@ public class GraficaCURP extends javax.swing.JFrame {
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/grafica/ui/117671379-mapa-de-méxico-nuevo-mapa-político-detallado-estados-individuales-separados-con-nombres-de-estado.jpg"))); // NOI18N
         jLabel13.setText("jLabel13");
 
+        btnPrueva.setText("Prueva");
+        btnPrueva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPruevaActionPerformed(evt);
+            }
+        });
+
+        cmbYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un año", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024" }));
+        cmbYear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbYearActionPerformed(evt);
+            }
+        });
+
+        cmbMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un mes", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+        cmbMonth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbMonthActionPerformed(evt);
+            }
+        });
+
+        cmbDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un dia", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -126,45 +130,50 @@ public class GraficaCURP extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(intA, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
-                        .addComponent(intM, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(intD, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtNombre))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(22, 22, 22)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel8)
-                                            .addComponent(txtA1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtA2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(EstadoN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cmbState, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel11)
-                                    .addComponent(CURP))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(105, 105, 105)))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(btnPrueva)
+                                        .addGap(119, 119, 119))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(jLabel1)
+                                                    .addComponent(jLabel2)
+                                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(txtName))
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGap(22, 22, 22)
+                                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGap(18, 18, 18)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(jLabel8)
+                                                            .addComponent(txtLastname1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(cmbGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(jLabel10)
+                                            .addComponent(jLabel11)
+                                            .addComponent(CURP)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                    .addGap(71, 71, 71)
+                                                    .addComponent(cmbMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(cmbDay, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(txtCurp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtLastname2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addComponent(cmbYear, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(12, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -188,33 +197,39 @@ public class GraficaCURP extends javax.swing.JFrame {
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtA1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtA2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtLastname1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtLastname2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EstadoN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbState, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
-                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(intA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(intM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(intD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cmbYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel11)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCurp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CURP)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addGap(13, 13, 13)
+                        .addComponent(btnPrueva)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                        .addContainerGap())))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(231, 231, 231)
@@ -225,21 +240,135 @@ public class GraficaCURP extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void intAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_intAActionPerformed
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_intAActionPerformed
+    }//GEN-LAST:event_txtNameActionPerformed
 
-    private void intDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_intDActionPerformed
+    private void cmbStateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbStateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_intDActionPerformed
+    }//GEN-LAST:event_cmbStateActionPerformed
 
-    private void intMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_intMActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_intMActionPerformed
+    private void btnPruevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPruevaActionPerformed
+       String estado= cmbState.getSelectedItem().toString();
+       String sex= cmbGender.getSelectedItem().toString();
+       
+       if(estado.equals("Aguascalientes")){
+            estado="AS";  
+        }
+       else if(estado.equals("Baja California")){
+            estado= "BC";
+        }
+       else if(estado.equals("Ciudad de México")){
+           estado="DF";
+       }
+       else if(estado.equals("Baja California Sur")){
+           estado="BS";
+       }
+       else if(estado.equals("Campeche")){
+           estado="CC";
+       }
+       else if(estado.equals("Coahuila")){
+           estado="CL";
+       }
+       else if(estado.equals("Colima")){
+           estado="CM";
+       }
+       else if(estado.equals("Chiuahua")){
+           estado="CH";
+       }
+       else if(estado.equals("Durango")){
+           estado="DG";
+       }
+       else if(estado.equals("Guanajuato")){
+           estado="GT";
+       }
+       else if(estado.equals("Guerrero")){
+           estado="GR";
+       }
+       else if(estado.equals("Hidalgo")){
+           estado="HG";
+       }
+       else if(estado.equals("Jalisco")){
+           estado="JC";
+       }
+       else if(estado.equals("México")){
+           estado="MC";
+       }
+       else if(estado.equals("Michoacán")){
+           estado="MN";
+       }
+       else if(estado.equals("Morelos")){
+           estado="MS";
+       }
+       else if(estado.equals("Nayarit")){
+           estado="NT";
+       }
+       else if(estado.equals("Nuevo León")){
+           estado="NL";
+       }
+       else if(estado.equals("Oaxaca")){
+           estado="OC";
+       }
+       else if(estado.equals("Puebla")){
+           estado="PL";
+       }
+       else if(estado.equals("Queretaro")){
+           estado="QT";
+       }
+       else if(estado.equals("Quintana Roo")){
+           estado="QR";
+       }
+       else if(estado.equals("San Luis Potosí")){
+           estado="SP";
+       }
+       else if(estado.equals("Sinaloa")){
+           estado="SL";
+       }
+       else if(estado.equals("Sonora")){
+           estado="SR";
+       }
+       else if(estado.equals("Tabasco")){
+           estado="TC";
+       }
+       else if(estado.equals("Tamaulipas")){
+           estado="TS";
+       }
+       else if(estado.equals("Tlaxcala")){
+           estado="TL";
+       }
+       else if(estado.equals("Veracruz")){
+           estado="VZ";
+       }
+       else if(estado.equals("Yucatán")){
+           estado="YN";
+       }
+       else if(estado.equals("Zacatecas")){
+           estado="ZS";
+       }
+        else{
+            estado="error";
+        }
+        
+        if(sex.equals("Hombre")){
+            sex="H";
+        }
+        else if(sex.equals("Mujer")){
+            sex="M";
+        }
+        else{
+            sex="NA";
+        }
+       
+        txtCurp.setText(estado+sex);
+    }//GEN-LAST:event_btnPruevaActionPerformed
 
-    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+    private void cmbYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbYearActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreActionPerformed
+    }//GEN-LAST:event_cmbYearActionPerformed
+
+    private void cmbMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMonthActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbMonthActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,11 +407,12 @@ public class GraficaCURP extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CURP;
-    private javax.swing.JComboBox<String> EstadoN;
-    private javax.swing.JComboBox<String> Sexo;
-    private javax.swing.JTextField intA;
-    private javax.swing.JTextField intD;
-    private javax.swing.JTextField intM;
+    private javax.swing.JButton btnPrueva;
+    private javax.swing.JComboBox<String> cmbDay;
+    private javax.swing.JComboBox<String> cmbGender;
+    private javax.swing.JComboBox<String> cmbMonth;
+    private javax.swing.JComboBox<String> cmbState;
+    private javax.swing.JComboBox<String> cmbYear;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -295,8 +425,9 @@ public class GraficaCURP extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField txtA1;
-    private javax.swing.JTextField txtA2;
-    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtCurp;
+    private javax.swing.JTextField txtLastname1;
+    private javax.swing.JTextField txtLastname2;
+    private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
 }
