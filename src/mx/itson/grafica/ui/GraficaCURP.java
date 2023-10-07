@@ -4,6 +4,8 @@
  */
 package mx.itson.grafica.ui;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author GibsCat
@@ -251,6 +253,8 @@ public class GraficaCURP extends javax.swing.JFrame {
     private void btnPruevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPruevaActionPerformed
        String estado= cmbState.getSelectedItem().toString();
        String sex= cmbGender.getSelectedItem().toString();
+       String dia= cmbDay.getSelectedItem().toString();
+       String month= cmbMonth.getSelectedItem().toString();
        
        if(estado.equals("Aguascalientes")){
             estado="AS";  
@@ -346,7 +350,8 @@ public class GraficaCURP extends javax.swing.JFrame {
            estado="ZS";
        }
         else{
-            estado="error";
+            JOptionPane.showMessageDialog(null, "Estado no seleccionado, intentelo de nuevo", "Error"
+                    , JOptionPane.ERROR_MESSAGE);
         }
         
         if(sex.equals("Hombre")){
@@ -356,10 +361,17 @@ public class GraficaCURP extends javax.swing.JFrame {
             sex="M";
         }
         else{
-            sex="NA";
+           JOptionPane.showMessageDialog(null, "Genero no seleccionado, intentelo de nuevo", "Error"
+                    , JOptionPane.ERROR_MESSAGE);
         }
-       
-        txtCurp.setText(estado+sex);
+       if(month!="Seleccione un mes" && dia!="Seleccione un dia"){
+           txtCurp.setText(month+dia+estado+sex);
+       }
+       else{
+           JOptionPane.showMessageDialog(null, "Fecha seleccionada incorrectamente, intentelo de nuevo", "Error"
+                    , JOptionPane.ERROR_MESSAGE);
+       }
+        
     }//GEN-LAST:event_btnPruevaActionPerformed
 
     private void cmbYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbYearActionPerformed
