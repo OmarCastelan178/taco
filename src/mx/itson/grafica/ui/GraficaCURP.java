@@ -70,7 +70,7 @@ public class GraficaCURP extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setText("Porfavor, ingrese los siguinetes datos:");
+        jLabel3.setText("Porfavor, ingrese los siguientes datos:");
 
         jLabel4.setText("Nombre (s)");
 
@@ -102,7 +102,7 @@ public class GraficaCURP extends javax.swing.JFrame {
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/grafica/ui/117671379-mapa-de-méxico-nuevo-mapa-político-detallado-estados-individuales-separados-con-nombres-de-estado.jpg"))); // NOI18N
         jLabel13.setText("jLabel13");
 
-        btnPrueva.setText("Prueva");
+        btnPrueva.setText("Prueba");
         btnPrueva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPruevaActionPerformed(evt);
