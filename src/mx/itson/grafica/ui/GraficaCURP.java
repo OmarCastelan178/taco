@@ -78,7 +78,7 @@ public class GraficaCURP extends javax.swing.JFrame {
 
         jLabel6.setText("Apellido 2");
 
-        cmbState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas", "Chihuahua", "Ciudad de México", "Coahuila", "Colima", "Durango", "México", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacán", "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro", "Quintana Roo", "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas" }));
+        cmbState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas", "Chiuahua", "Ciudad de México", "Coahuila", "Colima", "Durango", "México", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacán", "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro", "Quintana Roo", "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas" }));
         cmbState.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbStateActionPerformed(evt);
@@ -255,6 +255,10 @@ public class GraficaCURP extends javax.swing.JFrame {
        String sex= cmbGender.getSelectedItem().toString();
        String dia= cmbDay.getSelectedItem().toString();
        String month= cmbMonth.getSelectedItem().toString();
+       char lastname = txtLastname1.getText().charAt(0);
+       char lastname2 = txtLastname2.getText().charAt(0);
+       String name= txtName.getText();
+       
        
        if(estado.equals("Aguascalientes")){
             estado="AS";  
@@ -365,7 +369,7 @@ public class GraficaCURP extends javax.swing.JFrame {
                     , JOptionPane.ERROR_MESSAGE);
         }
        if(month!="Seleccione un mes" && dia!="Seleccione un dia"){
-           txtCurp.setText(month+dia+estado+sex);
+           txtCurp.setText(Character.toString(lastname)+Character.toString(lastname2)+month+dia+estado+sex);
        }
        else{
            JOptionPane.showMessageDialog(null, "Fecha seleccionada incorrectamente, intentelo de nuevo", "Error"
