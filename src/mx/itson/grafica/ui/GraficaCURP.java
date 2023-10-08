@@ -369,7 +369,7 @@ public class GraficaCURP extends javax.swing.JFrame {
                     , JOptionPane.ERROR_MESSAGE);
         }
        if(month!="Seleccione un mes" && dia!="Seleccione un dia"){
-           txtCurp.setText(Character.toString(lastname)+Character.toString(lastname2)+month+dia+estado+sex);
+           txtCurp.setText(Character.toString(lastname).toUpperCase()+Character.toString(lastname2).toUpperCase()+month+dia+estado+sex);
        }
        else{
            JOptionPane.showMessageDialog(null, "Fecha seleccionada incorrectamente, intentelo de nuevo", "Error"
