@@ -44,7 +44,6 @@ public class GraficaCURP extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        CURP = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         btnPrueva = new javax.swing.JButton();
         txtCurp = new javax.swing.JTextField();
@@ -96,8 +95,6 @@ public class GraficaCURP extends javax.swing.JFrame {
         jLabel10.setText("YYYY         /         MM          /          DD  ");
 
         jLabel11.setText("Su CURP: ");
-
-        CURP.setText("CURP");
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/grafica/ui/117671379-mapa-de-méxico-nuevo-mapa-político-detallado-estados-individuales-separados-con-nombres-de-estado.jpg"))); // NOI18N
         jLabel13.setText("jLabel13");
@@ -162,7 +159,6 @@ public class GraficaCURP extends javax.swing.JFrame {
                                                             .addComponent(cmbGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                             .addComponent(jLabel10)
                                             .addComponent(jLabel11)
-                                            .addComponent(CURP)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                                     .addGap(71, 71, 71)
@@ -223,9 +219,7 @@ public class GraficaCURP extends javax.swing.JFrame {
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtCurp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CURP)
-                        .addGap(13, 13, 13)
+                        .addGap(33, 33, 33)
                         .addComponent(btnPrueva)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
@@ -422,7 +416,6 @@ public class GraficaCURP extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel CURP;
     private javax.swing.JButton btnPrueva;
     private javax.swing.JComboBox<String> cmbDay;
     private javax.swing.JComboBox<String> cmbGender;
