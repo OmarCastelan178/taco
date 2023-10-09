@@ -12,7 +12,7 @@ public class Operacion {
 
     /**
      * Encuentra la primera vocal interna dentro de una cadena de texto Busca y
-     * devuelve la primera vocal que no sea la primera ni la última letra de la
+     * devuelve la primera VOCAL que no sea la primera ni la última letra de la
      * cadena de carecteres
      *
      * @param text
