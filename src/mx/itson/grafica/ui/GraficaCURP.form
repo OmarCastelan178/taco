@@ -52,17 +52,17 @@
                                                   <Component id="txtName" alignment="0" max="32767" attributes="0"/>
                                               </Group>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                                      <Component id="jLabel5" min="-2" pref="64" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
                                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                                           <Component id="txtLastname1" min="-2" pref="212" max="-2" attributes="0"/>
                                                           <Component id="cmbGender" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       </Group>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                                      <Component id="jLabel5" min="-2" pref="95" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
@@ -83,8 +83,8 @@
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel13" min="-2" pref="202" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" min="-2" pref="64" max="-2" attributes="0"/>
                                   <Component id="txtLastname2" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -204,7 +204,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Apellido 1"/>
+        <Property name="text" type="java.lang.String" value="Apellido Paterno"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtLastname1">
@@ -213,7 +213,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Apellido 2"/>
+        <Property name="text" type="java.lang.String" value="Apellido Materno"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="cmbState">
