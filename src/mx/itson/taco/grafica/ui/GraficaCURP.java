@@ -22,6 +22,7 @@ public class GraficaCURP extends javax.swing.JFrame {
      */
     public GraficaCURP() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -243,7 +244,7 @@ public class GraficaCURP extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbStateActionPerformed
 
     private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
-        String estado = cmbState.getSelectedItem().toString();
+        String state = cmbState.getSelectedItem().toString();
         String sex = cmbGender.getSelectedItem().toString();
         String day = cmbDay.getSelectedItem().toString();
         String month = cmbMonth.getSelectedItem().toString();
@@ -257,70 +258,73 @@ public class GraficaCURP extends javax.swing.JFrame {
         char internalConsonantName = internalConsonant(txtName.getText());
         char codeForYear = (Integer.parseInt(cmbYear.getSelectedItem().toString()) >= 2000) ? 'A' : '0';
         
-        if (estado.equals("Aguascalientes")) {
-            estado = "AS";
-        } else if (estado.equals("Baja California")) {
-            estado = "BC";
-        } else if (estado.equals("Ciudad de México")) {
-            estado = "DF";
-        } else if (estado.equals("Baja California Sur")) {
-            estado = "BS";
-        } else if (estado.equals("Campeche")) {
-            estado = "CC";
-        } else if (estado.equals("Coahuila")) {
-            estado = "CL";
-        } else if (estado.equals("Colima")) {
-            estado = "CM";
-        } else if (estado.equals("Chiuahua")) {
-            estado = "CH";
-        } else if (estado.equals("Durango")) {
-            estado = "DG";
-        } else if (estado.equals("Guanajuato")) {
-            estado = "GT";
-        } else if (estado.equals("Guerrero")) {
-            estado = "GR";
-        } else if (estado.equals("Hidalgo")) {
-            estado = "HG";
-        } else if (estado.equals("Jalisco")) {
-            estado = "JC";
-        } else if (estado.equals("México")) {
-            estado = "MC";
-        } else if (estado.equals("Michoacán")) {
-            estado = "MN";
-        } else if (estado.equals("Morelos")) {
-            estado = "MS";
-        } else if (estado.equals("Nayarit")) {
-            estado = "NT";
-        } else if (estado.equals("Nuevo León")) {
-            estado = "NL";
-        } else if (estado.equals("Oaxaca")) {
-            estado = "OC";
-        } else if (estado.equals("Puebla")) {
-            estado = "PL";
-        } else if (estado.equals("Queretaro")) {
-            estado = "QT";
-        } else if (estado.equals("Quintana Roo")) {
-            estado = "QR";
-        } else if (estado.equals("San Luis Potosí")) {
-            estado = "SP";
-        } else if (estado.equals("Sinaloa")) {
-            estado = "SL";
-        } else if (estado.equals("Sonora")) {
-            estado = "SR";
-        } else if (estado.equals("Tabasco")) {
-            estado = "TC";
-        } else if (estado.equals("Tamaulipas")) {
-            estado = "TS";
-        } else if (estado.equals("Tlaxcala")) {
-            estado = "TL";
-        } else if (estado.equals("Veracruz")) {
-            estado = "VZ";
-        } else if (estado.equals("Yucatán")) {
-            estado = "YN";
-        } else if (estado.equals("Zacatecas")) {
-            estado = "ZS";
+        if (state.equals("Aguascalientes")) {
+            state = "AS";
+        } else if (state.equals("Baja California")) {
+            state = "BC";
+        } else if (state.equals("Ciudad de México")) {
+            state = "DF";
+        } else if (state.equals("Baja California Sur")) {
+            state = "BS";
+        } else if (state.equals("Campeche")) {
+            state = "CC";
+        } else if (state.equals("Coahuila")) {
+            state = "CL";
+        } else if (state.equals("Colima")) {
+            state = "CM";
+        }else if(state.equals("Chiapas")){
+            state="CS";
+        }
+        else if (state.equals("Chiuahua")) {
+            state = "CH";
+        } else if (state.equals("Durango")) {
+            state = "DG";
+        } else if (state.equals("Guanajuato")) {
+            state = "GT";
+        } else if (state.equals("Guerrero")) {
+            state = "GR";
+        } else if (state.equals("Hidalgo")) {
+            state = "HG";
+        } else if (state.equals("Jalisco")) {
+            state = "JC";
+        } else if (state.equals("México")) {
+            state = "MC";
+        } else if (state.equals("Michoacán")) {
+            state = "MN";
+        } else if (state.equals("Morelos")) {
+            state = "MS";
+        } else if (state.equals("Nayarit")) {
+            state = "NT";
+        } else if (state.equals("Nuevo León")) {
+            state = "NL";
+        } else if (state.equals("Oaxaca")) {
+            state = "OC";
+        } else if (state.equals("Puebla")) {
+            state = "PL";
+        } else if (state.equals("Queretaro")) {
+            state = "QT";
+        } else if (state.equals("Quintana Roo")) {
+            state = "QR";
+        } else if (state.equals("San Luis Potosí")) {
+            state = "SP";
+        } else if (state.equals("Sinaloa")) {
+            state = "SL";
+        } else if (state.equals("Sonora")) {
+            state = "SR";
+        } else if (state.equals("Tabasco")) {
+            state = "TC";
+        } else if (state.equals("Tamaulipas")) {
+            state = "TS";
+        } else if (state.equals("Tlaxcala")) {
+            state = "TL";
+        } else if (state.equals("Veracruz")) {
+            state = "VZ";
+        } else if (state.equals("Yucatán")) {
+            state = "YN";
+        } else if (state.equals("Zacatecas")) {
+            state = "ZS";
         } else {
-            JOptionPane.showMessageDialog(null, "Estado no seleccionado, intentelo de nuevo", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Estado no seleccionado, intentelo de nuevo", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
         if (sex.equals("Hombre")) {
@@ -328,20 +332,20 @@ public class GraficaCURP extends javax.swing.JFrame {
         } else if (sex.equals("Mujer")) {
             sex = "M";
         } else {
-            JOptionPane.showMessageDialog(null, "Genero no seleccionado, intentelo de nuevo", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Genero no seleccionado, intentelo de nuevo", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        if (month != "Seleccione un mes" && day != "Seleccione un dia") {
+        if (month != "Seleccione un mes" && day != "Seleccione un dia"&& year !="Seleccione un año") {
             txtCurp.setText(Character.toString(lastname).toUpperCase()
                     + (Character.toString(internalVocal).toUpperCase())
                     + (Character.toString(lastname2).toUpperCase())
                     + (Character.toString(name).toUpperCase())
-                    + year + month + day + sex + estado
+                    + year + month + day + sex + state
                     + (Character.toString(internalConsonant1).toUpperCase())
                     + (Character.toString(internalConsonant2).toUpperCase())
                     + (Character.toString(internalConsonantName).toUpperCase())
                     + (Character.toString(codeForYear))+"1");
         } else {
-            JOptionPane.showMessageDialog(null, "Fecha seleccionada incorrectamente, intentelo de nuevo", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Fecha incompleta, intentelo de nuevo", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
     }//GEN-LAST:event_btnGenerarActionPerformed
