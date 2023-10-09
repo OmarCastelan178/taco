@@ -5,12 +5,17 @@
 package mx.itson.grafica.ui;
 
 import javax.swing.JOptionPane;
+import mx.itson.operaciones.op.Operacion;
+import static mx.itson.operaciones.op.Operacion.internalVocalLastName;
+import static mx.itson.operaciones.op.Operacion.internalConsonant;
 
 /**
  *
  * @author GibsCat
  */
 public class GraficaCURP extends javax.swing.JFrame {
+    
+    public static Operacion operacion = new Operacion();
 
     /**
      * Creates new form GraficaCURP
@@ -146,7 +151,8 @@ public class GraficaCURP extends javax.swing.JFrame {
                                                     .addComponent(jLabel2)
                                                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(txtName))
+                                                    .addComponent(txtName)
+                                                    .addComponent(jLabel9))
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addGroup(layout.createSequentialGroup()
                                                         .addGap(18, 18, 18)
@@ -172,12 +178,7 @@ public class GraficaCURP extends javax.swing.JFrame {
                                     .addComponent(txtLastname2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel6)))))
                     .addComponent(cmbYear, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(16, 16, 16)
-                    .addComponent(jLabel9)
-                    .addContainerGap(504, Short.MAX_VALUE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,9 +187,9 @@ public class GraficaCURP extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(47, 47, 47)
                 .addComponent(jLabel3)
-                .addGap(33, 33, 33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
@@ -199,7 +200,9 @@ public class GraficaCURP extends javax.swing.JFrame {
                     .addComponent(txtLastname1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtLastname2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbState, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -219,18 +222,13 @@ public class GraficaCURP extends javax.swing.JFrame {
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtCurp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
+                        .addGap(13, 13, 13)
                         .addComponent(btnPrueva)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(231, 231, 231)
-                    .addComponent(jLabel9)
-                    .addContainerGap(259, Short.MAX_VALUE)))
         );
 
         pack();
@@ -245,131 +243,107 @@ public class GraficaCURP extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbStateActionPerformed
 
     private void btnPruevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPruevaActionPerformed
-       String estado= cmbState.getSelectedItem().toString();
-       String sex= cmbGender.getSelectedItem().toString();
-       String dia= cmbDay.getSelectedItem().toString();
-       String month= cmbMonth.getSelectedItem().toString();
-       char lastname = txtLastname1.getText().charAt(0);
-       char lastname2 = txtLastname2.getText().charAt(0);
-       String name= txtName.getText();
-       
-       
-       if(estado.equals("Aguascalientes")){
-            estado="AS";  
-        }
-       else if(estado.equals("Baja California")){
-            estado= "BC";
-        }
-       else if(estado.equals("Ciudad de México")){
-           estado="DF";
-       }
-       else if(estado.equals("Baja California Sur")){
-           estado="BS";
-       }
-       else if(estado.equals("Campeche")){
-           estado="CC";
-       }
-       else if(estado.equals("Coahuila")){
-           estado="CL";
-       }
-       else if(estado.equals("Colima")){
-           estado="CM";
-       }
-       else if(estado.equals("Chiuahua")){
-           estado="CH";
-       }
-       else if(estado.equals("Durango")){
-           estado="DG";
-       }
-       else if(estado.equals("Guanajuato")){
-           estado="GT";
-       }
-       else if(estado.equals("Guerrero")){
-           estado="GR";
-       }
-       else if(estado.equals("Hidalgo")){
-           estado="HG";
-       }
-       else if(estado.equals("Jalisco")){
-           estado="JC";
-       }
-       else if(estado.equals("México")){
-           estado="MC";
-       }
-       else if(estado.equals("Michoacán")){
-           estado="MN";
-       }
-       else if(estado.equals("Morelos")){
-           estado="MS";
-       }
-       else if(estado.equals("Nayarit")){
-           estado="NT";
-       }
-       else if(estado.equals("Nuevo León")){
-           estado="NL";
-       }
-       else if(estado.equals("Oaxaca")){
-           estado="OC";
-       }
-       else if(estado.equals("Puebla")){
-           estado="PL";
-       }
-       else if(estado.equals("Queretaro")){
-           estado="QT";
-       }
-       else if(estado.equals("Quintana Roo")){
-           estado="QR";
-       }
-       else if(estado.equals("San Luis Potosí")){
-           estado="SP";
-       }
-       else if(estado.equals("Sinaloa")){
-           estado="SL";
-       }
-       else if(estado.equals("Sonora")){
-           estado="SR";
-       }
-       else if(estado.equals("Tabasco")){
-           estado="TC";
-       }
-       else if(estado.equals("Tamaulipas")){
-           estado="TS";
-       }
-       else if(estado.equals("Tlaxcala")){
-           estado="TL";
-       }
-       else if(estado.equals("Veracruz")){
-           estado="VZ";
-       }
-       else if(estado.equals("Yucatán")){
-           estado="YN";
-       }
-       else if(estado.equals("Zacatecas")){
-           estado="ZS";
-       }
-        else{
-            JOptionPane.showMessageDialog(null, "Estado no seleccionado, intentelo de nuevo", "Error"
-                    , JOptionPane.ERROR_MESSAGE);
+        String estado = cmbState.getSelectedItem().toString();
+        String sex = cmbGender.getSelectedItem().toString();
+        String day = cmbDay.getSelectedItem().toString();
+        String month = cmbMonth.getSelectedItem().toString();
+        String year = cmbYear.getSelectedItem().toString().substring(2);
+        char lastname = txtLastname1.getText().charAt(0);
+        char internalVocal = internalVocalLastName(txtLastname1.getText());
+        char internalConsonant1 = internalConsonant(txtLastname1.getText());
+        char lastname2 = txtLastname2.getText().charAt(0);
+        char internalConsonant2 = internalConsonant(txtLastname2.getText());
+        char name = txtName.getText().charAt(0);
+        char internalConsonantName = internalConsonant(txtName.getText());
+        char codeForYear = (Integer.parseInt(cmbYear.getSelectedItem().toString()) <= 200) ? 'A' : '0';
+        
+        if (estado.equals("Aguascalientes")) {
+            estado = "AS";
+        } else if (estado.equals("Baja California")) {
+            estado = "BC";
+        } else if (estado.equals("Ciudad de México")) {
+            estado = "DF";
+        } else if (estado.equals("Baja California Sur")) {
+            estado = "BS";
+        } else if (estado.equals("Campeche")) {
+            estado = "CC";
+        } else if (estado.equals("Coahuila")) {
+            estado = "CL";
+        } else if (estado.equals("Colima")) {
+            estado = "CM";
+        } else if (estado.equals("Chiuahua")) {
+            estado = "CH";
+        } else if (estado.equals("Durango")) {
+            estado = "DG";
+        } else if (estado.equals("Guanajuato")) {
+            estado = "GT";
+        } else if (estado.equals("Guerrero")) {
+            estado = "GR";
+        } else if (estado.equals("Hidalgo")) {
+            estado = "HG";
+        } else if (estado.equals("Jalisco")) {
+            estado = "JC";
+        } else if (estado.equals("México")) {
+            estado = "MC";
+        } else if (estado.equals("Michoacán")) {
+            estado = "MN";
+        } else if (estado.equals("Morelos")) {
+            estado = "MS";
+        } else if (estado.equals("Nayarit")) {
+            estado = "NT";
+        } else if (estado.equals("Nuevo León")) {
+            estado = "NL";
+        } else if (estado.equals("Oaxaca")) {
+            estado = "OC";
+        } else if (estado.equals("Puebla")) {
+            estado = "PL";
+        } else if (estado.equals("Queretaro")) {
+            estado = "QT";
+        } else if (estado.equals("Quintana Roo")) {
+            estado = "QR";
+        } else if (estado.equals("San Luis Potosí")) {
+            estado = "SP";
+        } else if (estado.equals("Sinaloa")) {
+            estado = "SL";
+        } else if (estado.equals("Sonora")) {
+            estado = "SR";
+        } else if (estado.equals("Tabasco")) {
+            estado = "TC";
+        } else if (estado.equals("Tamaulipas")) {
+            estado = "TS";
+        } else if (estado.equals("Tlaxcala")) {
+            estado = "TL";
+        } else if (estado.equals("Veracruz")) {
+            estado = "VZ";
+        } else if (estado.equals("Yucatán")) {
+            estado = "YN";
+        } else if (estado.equals("Zacatecas")) {
+            estado = "ZS";
+        } else {
+            JOptionPane.showMessageDialog(null, "Estado no seleccionado, intentelo de nuevo", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
-        if(sex.equals("Hombre")){
-            sex="H";
+        if (sex.equals("Hombre")) {
+            sex = "H";
+        } else if (sex.equals("Mujer")) {
+            sex = "M";
+        } else {
+            JOptionPane.showMessageDialog(null, "Genero no seleccionado, intentelo de nuevo", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        else if(sex.equals("Mujer")){
-            sex="M";
+        if (month != "Seleccione un mes" && day != "Seleccione un dia") {
+            txtCurp.setText(Character.toString(lastname).toUpperCase()
+                    + (Character.toString(internalVocal).toUpperCase())
+                    + (Character.toString(lastname2).toUpperCase())
+                    + (Character.toString(name).toUpperCase())
+                    + year + month + day + sex + estado
+                    + (Character.toString(internalConsonant1).toUpperCase())
+                    + (Character.toString(internalConsonant2).toUpperCase())
+                    + (Character.toString(internalConsonantName).toUpperCase())
+                    + (Character.toString(codeForYear)));
+        } else {
+            JOptionPane.showMessageDialog(null, "Fecha seleccionada incorrectamente, intentelo de nuevo", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        else{
-           JOptionPane.showMessageDialog(null, "Genero no seleccionado, intentelo de nuevo", "Error"
-                    , JOptionPane.ERROR_MESSAGE);
-        }
-       if(month!="Seleccione un mes" && dia!="Seleccione un dia"){
-           txtCurp.setText(Character.toString(lastname).toUpperCase()+Character.toString(lastname2).toUpperCase()+month+dia+estado+sex);
-       }
-       else{
-           JOptionPane.showMessageDialog(null, "Fecha seleccionada incorrectamente, intentelo de nuevo", "Error"
-                    , JOptionPane.ERROR_MESSAGE);
-       }
-        
+
     }//GEN-LAST:event_btnPruevaActionPerformed
 
     private void cmbYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbYearActionPerformed
